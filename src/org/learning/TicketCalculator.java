@@ -16,7 +16,17 @@ public class TicketCalculator{
 
         // Calcolo prezzo base
         double basePrice = kilometers * 0.21;
+        double finalPrice = basePrice;
 
-        System.out.println("Price Base: " + basePrice + " €");
+        //Sconto in aìbase all'età
+        if (age < 18) {
+            //sconto 20%
+            finalPrice = basePrice * 0.8;
+        } else if (age > 65) {
+            //sconto 40%
+            finalPrice = basePrice * 0.6;
+        }
+
+        System.out.println("Il prezzo finale del biglietto è: " + finalPrice + " €");
     }
 }
