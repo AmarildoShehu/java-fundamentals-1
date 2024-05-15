@@ -17,7 +17,22 @@ public class MetGalaSecurity {
         System.out.print("Inserisci il tuo nome: ");
         String userName = scanner.nextLine();
 
-        //chiudo lo scan
+        // Verifica se il nome e presente
+        boolean isInvited = false;
+        for (String guest : guestList) {
+            if (guest.equalsIgnoreCase(userName)) {
+                isInvited = true;
+                break;
+            }
+        }
+
+        //Mostra in console se puo entrare o meno
+        if (isInvited){
+            System.out.println("Benvenuto al Met Gala ");
+        } else {
+            System.out.println("Mi dispiace non fai parte della lista degli invitati");
+        }
+        // chiudo lo scan
         scanner.close();
 
     }
